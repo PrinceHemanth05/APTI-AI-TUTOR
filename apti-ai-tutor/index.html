@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APTI AI Tutor - Learn Smarter with AI</title>
+    <meta name="description" content="Your personal AI tutor available 24/7. Get instant explanations, practice problems, and track your progress.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%236366F1'/><stop offset='100%25' stop-color='%23EC4899'/></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23g)'/><text x='50' y='65' font-size='40' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>AI</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <!-- 3D Shapes -->
+        <div class="shape-3d shape-3d-1">
+            <div class="cube">
+                <div class="cube-face cube-face-front"></div>
+                <div class="cube-face cube-face-back"></div>
+                <div class="cube-face cube-face-right"></div>
+                <div class="cube-face cube-face-left"></div>
+                <div class="cube-face cube-face-top"></div>
+                <div class="cube-face cube-face-bottom"></div>
+            </div>
+        </div>
+        
+        <div class="shape-3d shape-3d-2">
+            <div class="torus"></div>
+        </div>
+        
+        <div class="shape-3d shape-3d-3">
+            <div class="pyramid"></div>
+        </div>
+        
+        <div class="shape-3d shape-3d-4">
+            <div class="sphere"></div>
+        </div>
+        
+        <!-- Atoms -->
+        <div class="shape-3d shape-3d-5">
+            <div class="atom">
+                <div class="atom-core"></div>
+                <div class="atom-orbit">
+                    <div class="atom-electron"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Neural Network Background -->
+        <div class="neural-bg" id="neuralBg"></div>
+        
+        <!-- 3D Grid Floor -->
+        <div class="grid-floor"></div>
+        
+        <!-- Motion Graphics Container -->
+        <div class="motion-graphics" id="motionGraphics">
+            <!-- Morphing Blobs -->
+            <div class="morphing-blob" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent); top: 10%; left: 60%;"></div>
+            <div class="morphing-blob" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(236, 72, 153, 0.15), transparent); top: 50%; left: 70%; animation-delay: -4s;"></div>
+            
+            <!-- Flowing Lines -->
+            <div class="flowing-lines">
+                <div class="flow-line" style="top: 15%; width: 40%; animation-delay: 0s;"></div>
+                <div class="flow-line" style="top: 35%; width: 50%; animation-delay: -3s;"></div>
+                <div class="flow-line" style="top: 55%; width: 35%; animation-delay: -6s;"></div>
+                <div class="flow-line" style="top: 75%; width: 45%; animation-delay: -9s;"></div>
+            </div>
+            
+            <!-- Shooting Stars -->
+            <div class="shooting-star" style="top: 10%; left: 80%; animation-delay: 0s;"></div>
+            <div class="shooting-star" style="top: 30%; left: 10%; animation-delay: 5s;"></div>
+            <div class="shooting-star" style="top: 60%; left: 50%; animation-delay: 10s;"></div>
+            
+            <!-- Smoke Effects -->
+            <div class="smoke" style="bottom: 20%; left: 30%; animation-delay: 0s;"></div>
+            <div class="smoke" style="bottom: 30%; left: 60%; animation-delay: -2s;"></div>
+            <div class="smoke" style="bottom: 25%; left: 45%; animation-delay: -4s;"></div>
+            
+            <!-- Ripple Effects -->
+            <div class="ripple" style="top: 20%; left: 20%; border-color: var(--primary);"></div>
+            <div class="ripple" style="top: 60%; left: 80%; border-color: var(--secondary);"></div>
+            <div class="ripple" style="top: 80%; left: 40%; border-color: var(--accent);"></div>
+            
+            <!-- Data Streams -->
+            <div class="data-stream" style="left: 5%; animation-delay: 0s;">01010110101101010</div>
+            <div class="data-stream" style="left: 15%; animation-delay: -2s;">11010010110101001</div>
+            <div class="data-stream" style="left: 85%; animation-delay: -4s;">10101100101011010</div>
+            <div class="data-stream" style="left: 92%; animation-delay: -6s;">01011010110101010</div>
+            
+            <!-- Hexagon Grid Overlay -->
+            <div class="hexagon-grid" style="opacity: 0.5;"></div>
+            
+            <!-- Laser Beams -->
+            <div class="laser-beam" style="top: 25%; left: 0; width: 60%; animation-delay: 0s;"></div>
+            <div class="laser-beam" style="top: 65%; left: 40%; width: 50%; animation-delay: -2s;"></div>
+        </div>
+        
+        <!-- Original Gradient Orbs -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-pattern"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div id="cursorTrails"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="APTI AI Tutor Logo">
+                <span class="logo-text">
+                    <span class="logo-ap">AP</span><span class="logo-ti">TI</span>
+                    <span class="logo-ai"> AI Tutor</span>
+                </span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#subjects" class="nav-link">Subjects</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-secondary">Contact</a>
+                <a href="#get-started" class="btn btn-primary">Get Started</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display:none;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+                <div class="hero-badge">
+                    <i data-lucide="sparkles"></i>
+                    <span>Powered by Advanced AI</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Learn <span class="gradient-text">Smarter</span> with AI
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Your personal AI tutor available 24/7. Get instant explanations, 
+                    practice problems tailored to you, and track your learning progress 
+                    with intelligent analytics.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#get-started" class="btn btn-primary btn-lg">
+                        <i data-lucide="rocket"></i>
+                        Start Learning Free
+                    </a>
+                    <a href="#demo" class="btn btn-secondary btn-lg">
+                        <i data-lucide="play-circle"></i>
+                        Watch Demo
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Topics</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">AI Support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <div class="hero-illustration">
+                    <div class="floating-card card-1">
+                        <i data-lucide="brain"></i>
+                        <span>AI Powered</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i data-lucide="zap"></i>
+                        <span>Instant Help</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i data-lucide="target"></i>
+                        <span>Track Progress</span>
+                    </div>
+                    <div class="main-orb">
+                        <div class="orb-inner">
+                            <i data-lucide=" GraduationCap"></i>
+                        </div>
+                        <div class="orb-ring ring-1"></div>
+                        <div class="orb-ring ring-2"></div>
+                        <div class="orb-ring ring-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i data-lucide="chevrons-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Powerful Features for <span class="gradient-text">Effective Learning</span></h2>
+                <p class="section-subtitle">Experience the future of education with our AI-powered tools designed to enhance your learning journey.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Explanations</h3>
+                    <p class="feature-description">Complex topics simplified instantly with intelligent explanations adapted to your learning level.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3"></i>
+                    </div>
+                    <h3 class="feature-title">Smart Progress Tracking</h3>
+                    <p class="feature-description">AI analyzes your strengths and weaknesses to create a personalized learning path for maximum efficiency.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3 class="feature-title">24/7 Availability</h3>
+                    <p class="feature-description">Learn anytime, anywhere. Our AI tutor never sleeps, ensuring help is always just a click away.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i data-lucide="compass"></i>
+                    </div>
+                    <h3 class="feature-title">Personalized Curriculum</h3>
+                    <p class="feature-description">Content that adapts to your pace, style, and preferences for optimal knowledge retention.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i data-lucide="puzzle"></i>
+                    </div>
+                    <h3 class="feature-title">Interactive Quizzes</h3>
+                    <p class="feature-description">Test your knowledge with AI-generated questions that challenge and reinforce your learning.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Real-time Feedback</h3>
+                    <p class="feature-description">Get instant corrections, hints, and encouragement to keep you motivated and on track.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Simple Process</span>
+                <h2 class="section-title">How <span class="gradient-text">It Works</span></h2>
+                <p class="section-subtitle">Get started with APTI AI Tutor in just a few easy steps.</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i data-lucide="user-plus"></i>
+                    </div>
+                    <h3 class="step-title">Create Account</h3>
+                    <p class="step-description">Sign up for free in just seconds.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="150">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3 class="step-title">Set Your Goal</h3>
+                    <p class="step-description">Define what you want to learn or achieve.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="250">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i data-lucide="clipboard-check"></i>
+                    </div>
+                    <h3 class="step-title">Take Assessment</h3>
+                    <p class="step-description">Quick quiz to understand your current level.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="350">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3 class="step-title">AI Generates Plan</h3>
+                    <p class="step-description">Personalized learning path created for you.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="450">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3 class="step-title">Start Learning</h3>
+                    <p class="step-description">AI explains concepts in your style.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="550">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-number">6</div>
+                    <div class="step-icon">
+                        <i data-lucide="puzzle"></i>
+                    </div>
+                    <h3 class="step-title">Practice Quizzes</h3>
+                    <p class="step-description">Test knowledge with adaptive questions.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="650">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="700">
+                    <div class="step-number">7</div>
+                    <div class="step-icon">
+                        <i data-lucide="bar-chart-3"></i>
+                    </div>
+                    <h3 class="step-title">Track Progress</h3>
+                    <p class="step-description">Monitor your improvement in real-time.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="750">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="800">
+                    <div class="step-number">8</div>
+                    <div class="step-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <h3 class="step-title">Get AI Feedback</h3>
+                    <p class="step-description">Instant corrections and improvement tips.</p>
+                </div>
+                
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="850">
+                    <div class="connector-line"></div>
+                    <i data-lucide="arrow-right" class="connector-arrow"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="900">
+                    <div class="step-number">9</div>
+                    <div class="step-icon">
+                        <i data-lucide="trophy"></i>
+                    </div>
+                    <h3 class="step-title">Achieve Goals</h3>
+                    <p class="step-description">Reach your targets with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="subjects" id="subjects">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Who It's For</span>
+                <h2 class="section-title">Perfect for <span class="gradient-text">Everyone</span></h2>
+                <p class="section-subtitle">APTI AI Tutor adapts to your needs, whether you're learning new skills or enhancing existing ones.</p>
+            </div>
+            
+            <div class="subjects-grid">
+                <div class="subject-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="subject-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <h3 class="subject-title">Students</h3>
+                    <p class="subject-topics">School & College learners</p>
+                    <p class="user-description">Ace your exams with AI-powered explanations, practice problems, and instant doubt resolution.</p>
+                </div>
+                
+                <div class="subject-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="subject-icon">
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                    <h3 class="subject-title">Working Professionals</h3>
+                    <p class="subject-topics">Career advancement</p>
+                    <p class="user-description">Upskill at your own pace. Learn new technologies, soft skills, and industry knowledge.</p>
+                </div>
+                
+                <div class="subject-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="subject-icon">
+                        <i data-lucide="code-2"></i>
+                    </div>
+                    <h3 class="subject-title">Tech Enthusiasts</h3>
+                    <p class="subject-topics">Programming & Development</p>
+                    <p class="user-description">Master coding, data science, AI/ML, and emerging technologies with hands-on practice.</p>
+                </div>
+                
+                <div class="subject-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="subject-icon">
+                        <i data-lucide="building-2"></i>
+                    </div>
+                    <h3 class="subject-title">Business Owners</h3>
+                    <p class="subject-topics">Entrepreneurs & Leaders</p>
+                    <p class="user-description">Learn business strategies, finance, marketing, and management skills.</p>
+                </div>
+                
+                <div class="subject-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="subject-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="subject-title">Corporate Teams</h3>
+                    <p class="subject-topics">Organizations & Enterprises</p>
+                    <p class="user-description">Onboard employees faster, train teams, and maintain consistent knowledge bases.</p>
+                </div>
+                
+                <div class="subject-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="subject-icon">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3 class="subject-title">Lifelong Learners</h3>
+                    <p class="subject-topics">Personal Growth</p>
+                    <p class="user-description">Explore new hobbies, languages, or any topic you've always wanted to learn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Pricing</span>
+                <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
+                <p class="section-subtitle">Start free and upgrade as you grow. No hidden fees, cancel anytime.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Free</h3>
+                        <p class="pricing-tagline">Get started with basics</p>
+                        <div class="pricing-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> 5 AI queries per day</li>
+                        <li><i data-lucide="check"></i> Basic topic explanations</li>
+                        <li><i data-lucide="check"></i> Limited practice quizzes</li>
+                        <li><i data-lucide="check"></i> Progress tracking</li>
+                        <li class="disabled"><i data-lucide="x"></i> Personalized learning plans</li>
+                        <li class="disabled"><i data-lucide="x"></i> Priority support</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary btn-block">Get Started Free</a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Pro</h3>
+                        <p class="pricing-tagline">For serious learners</p>
+                        <div class="pricing-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">499</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Unlimited AI queries</li>
+                        <li><i data-lucide="check"></i> Advanced explanations</li>
+                        <li><i data-lucide="check"></i> Unlimited practice quizzes</li>
+                        <li><i data-lucide="check"></i> Detailed analytics</li>
+                        <li><i data-lucide="check"></i> Personalized learning plans</li>
+                        <li><i data-lucide="check"></i> Priority support</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-block">Start Pro Trial</a>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Enterprise</h3>
+                        <p class="pricing-tagline">For teams & organizations</p>
+                        <div class="pricing-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">1999</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Everything in Pro</li>
+                        <li><i data-lucide="check"></i> Team management</li>
+                        <li><i data-lucide="check"></i> Custom content</li>
+                        <li><i data-lucide="check"></i> API access</li>
+                        <li><i data-lucide="check"></i> Dedicated account manager</li>
+                        <li><i data-lucide="check"></i> Custom integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary btn-block">Contact Sales</a>
+                </div>
+            </div>
+            
+            <p class="pricing-note" data-aos="fade-up" data-aos-delay="400">
+                <i data-lucide="shield-check"></i> All plans include a 7-day free trial. No credit card required to start.
+            </p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Success Stories</span>
+                <h2 class="section-title">What Our <span class="gradient-text">Students Say</span></h2>
+                <p class="section-subtitle">Join thousands of learners who have transformed their education with APTI AI Tutor.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i data-lucide="quote"></i>
+                        </div>
+                        <p class="testimonial-text">"APTI AI Tutor helped me understand calculus concepts I struggled with for months. The explanations are clear and the AI adapts to my learning pace perfectly."</p>
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i data-lucide="user"></i>
+                        </div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah Johnson</span>
+                            <span class="author-role">Computer Science Student</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i data-lucide="quote"></i>
+                        </div>
+                        <p class="testimonial-text">"As a working professional, I needed flexible learning. APTI AI Tutor is available whenever I have time to study, and the progress tracking keeps me motivated."</p>
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i data-lucide="user"></i>
+                        </div>
+                        <div class="author-info">
+                            <span class="author-name">Michael Chen</span>
+                            <span class="author-role">Data Analyst</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i data-lucide="quote"></i>
+                        </div>
+                        <p class="testimonial-text">"My daughter uses APTI for her high school studies. The interactive quizzes and instant feedback have significantly improved her grades and confidence."</p>
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                            <i data-lucide="star" class="star filled"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i data-lucide="user"></i>
+                        </div>
+                        <div class="author-info">
+                            <span class="author-name">Emily Rodriguez</span>
+                            <span class="author-role">Parent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="get-started">
+        <div class="cta-container" data-aos="zoom-in">
+            <div class="cta-glow"></div>
+            <h2 class="cta-title">Ready to Transform Your Learning?</h2>
+            <p class="cta-subtitle">Join thousands of students already learning smarter with AI. Start your free journey today.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary btn-lg">
+                    <i data-lucide="sparkles"></i>
+                    Get Started Free
+                </a>
+                <a href="#contact" class="btn btn-outline-light btn-lg">
+                    <i data-lucide="message-square"></i>
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="assets/images/logo.png" alt="APTI AI Tutor">
+                    </a>
+                    <p class="footer-description">Revolutionizing education with AI-powered personalized learning experiences.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/apti-business-solutions/posts/?feedView=all" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#subjects">Who It's For</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links contact-info">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+919611758973">+91 9611758973</a>
+                        </li>
+                        <li>
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:apticareers@gmail.com">apticareers@gmail.com</a>
+                        </li>
+                        <li>
+                            <i data-lucide="linkedin"></i>
+                            <a href="https://www.linkedin.com/company/apti-business-solutions/posts/?feedView=all" target="_blank">LinkedIn</a>
+                        </li>
+                        <li>
+                            <i data-lucide="instagram"></i>
+                            <a href="#" target="_blank">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Stay Updated</h4>
+                    <p class="newsletter-text">Subscribe to our newsletter for the latest updates.</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 APTI AI Tutor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-btn" id="chatbotBtn" aria-label="Open Chat">
+            <i data-lucide="message-circle"></i>
+            <span class="chatbot-notification"></span>
+        </button>
+        
+        <!-- WhatsApp Button (Below Chatbot) -->
+        <a href="https://wa.me/919611758973?text=Hi!%20I'm%20interested%20in%20APTI%20AI%20Tutor." 
+           class="whatsapp-btn" 
+           id="whatsappBtn"
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Contact via WhatsApp">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <i data-lucide="bot"></i>
+                </div>
+                <div class="chatbot-info">
+                    <span class="chatbot-name">APTI AI Assistant</span>
+                    <span class="chatbot-status">
+                        <span class="status-dot"></span>
+                        Online
+                    </span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hi! I'm your APTI AI Tutor assistant. How can I help you today?</p>
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+                
+                <div class="quick-replies">
+                    <button class="quick-reply" data-action="explain">Explain a topic</button>
+                    <button class="quick-reply" data-action="quiz">Take a quiz</button>
+                    <button class="quick-reply" data-action="progress">Track progress</button>
+                    <button class="quick-reply" data-action="help">Get help</button>
+                </div>
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message..." id="chatInput">
+                <button class="send-btn" id="sendBtn" aria-label="Send message">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/utils.js"></script>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Initialize AOS animations
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
